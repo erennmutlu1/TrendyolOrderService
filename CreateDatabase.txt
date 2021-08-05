@@ -1,0 +1,102 @@
+--!!!!!--****Before create a table first of all create a database with TrendyolOrderDatabase name and then you can start to create tables****--!!!!!
+
+CREATE TABLE [dbo].[TrendyolOrders_InvoiceAddresses] (
+    [id]             BIGINT        NOT NULL,
+    [firstName]      VARCHAR (30)  NOT NULL,
+    [lastName]       VARCHAR (30)  NOT NULL,
+    [company]        VARCHAR (70)  NULL,
+    [address1]       VARCHAR (250) NOT NULL,
+    [address2]       VARCHAR (250) NULL,
+    [city]           VARCHAR (30)  NULL,
+    [cityCode]       BIGINT        NULL,
+    [district]       VARCHAR (30)  NULL,
+    [districtId]     BIGINT        NULL,
+    [countryCode]    VARCHAR (12)  NULL,
+    [neighborhoodId] BIGINT        NULL,
+    [neighborhood]   VARCHAR (30)  NULL,
+    [phone]          VARCHAR (12)  NULL,
+    [fullAddress]    VARCHAR (250) NOT NULL,
+    [fullName]       VARCHAR (70)  NOT NULL,
+    PRIMARY KEY CLUSTERED ([id] ASC)
+);
+
+CREATE TABLE [dbo].[TrendyolOrders_Lines] (
+    [id]                      BIGINT         NOT NULL,
+    [quantity]                BIGINT         NOT NULL,
+    [salesCampaignId]         BIGINT         NOT NULL,
+    [productSize]             VARCHAR (300)  NOT NULL,
+    [merchantSku]             VARCHAR (200)  NOT NULL,
+    [productName]             VARCHAR (180)  NOT NULL,
+    [productCode]             BIGINT         NOT NULL,
+    [merchantId]              BIGINT         NOT NULL,
+    [amount]                  FLOAT (53)     NOT NULL,
+    [discount]                FLOAT (53)     NOT NULL,
+    [lineItemPrice]           FLOAT (53)     NOT NULL,
+    [lineItemDiscount]        FLOAT (53)     NOT NULL,
+    [currencyCode]            VARCHAR (32)   NOT NULL,
+    [productColor]            VARCHAR (200)  NULL,
+    [sku]                     BIGINT         NULL,
+    [vatBaseAmount]           FLOAT (53)     NULL,
+    [barcode]                 BIGINT         NULL,
+    [orderLineItemStatusName] VARCHAR (200)  NULL,
+    [price]                   FLOAT (53)     NULL,
+    [orderNumber]             NVARCHAR (500) NOT NULL,
+    CONSTRAINT [PK__Trendyol__3213E83FCBB05E00] PRIMARY KEY CLUSTERED ([id] ASC)
+);
+CREATE TABLE [dbo].[TrendyolOrders_PackageHistories] (
+    [CreatedDate] BIGINT        NOT NULL,
+    [Status]      VARCHAR (50)  NOT NULL,
+    [OrderNumber] NVARCHAR (50) NOT NULL,
+    [Id]          INT           IDENTITY (1, 1) NOT NULL,
+    CONSTRAINT [PK_TrendyolOrders_PackageHistories] PRIMARY KEY CLUSTERED ([Id] ASC)
+);
+CREATE TABLE [dbo].[TrendyolOrders_ShipmentAddresses] (
+    [Id]             BIGINT        NOT NULL,
+    [FirstName]      VARCHAR (30)  NULL,
+    [LastName]       VARCHAR (30)  NULL,
+    [Address1]       VARCHAR (250) NULL,
+    [Address2]       VARCHAR (250) NULL,
+    [City]           VARCHAR (30)  NULL,
+    [CityCode]       BIGINT        NULL,
+    [District]       VARCHAR (250) NULL,
+    [DistrictId]     BIGINT        NULL,
+    [PostalCode]     VARCHAR (250) NULL,
+    [CountryCode]    VARCHAR (12)  NULL,
+    [NeighborhoodId] BIGINT        NULL,
+    [Neighborhood]   VARCHAR (30)  NULL,
+    [FullAddress]    VARCHAR (250) NULL,
+    [FullName]       VARCHAR (60)  NULL,
+    PRIMARY KEY CLUSTERED ([Id] ASC)
+);
+
+
+CREATE TABLE [dbo].[TrendyolOrders] (
+    [GrossAmount]                MONEY          NOT NULL,
+    [TotalDiscount]              MONEY          NOT NULL,
+    [TaxNumber]                  NVARCHAR (250) NULL,
+    [ShipmentAddressId]          BIGINT         NOT NULL,
+    [OrderNumber]                NVARCHAR (250) NOT NULL,
+    [InvoiceAddressId]           BIGINT         NOT NULL,
+    [customerFirstName]          NVARCHAR (250) NOT NULL,
+    [customerEmail]              NVARCHAR (250) NULL,
+    [customerId]                 BIGINT         NULL,
+    [customerLastName]           NVARCHAR (250) NOT NULL,
+    [cargoTrackingNumber]        BIGINT         NOT NULL,
+    [cargoTrackingLink]          NVARCHAR (250) NULL,
+    [cargoSenderNumber]          NVARCHAR (250) NULL,
+    [cargoProviderName]          NVARCHAR (250) NOT NULL,
+    [orderDate]                  BIGINT         NOT NULL,
+    [tcIdentityNumber]           NVARCHAR (250) NULL,
+    [shipmentPackageStatus]      NVARCHAR (250) NULL,
+    [deliveryType]               NVARCHAR (250) NULL,
+    [timeSlotId]                 BIGINT         NULL,
+    [scheduledDeliveryStoreId]   NVARCHAR (250) NULL,
+    [estimatedDeliveryStartDate] BIGINT         NULL,
+    [estimatedDeliveryEndDate]   BIGINT         NULL,
+    [totalPrice]                 MONEY          NOT NULL,
+    [Id]                         INT            IDENTITY (1, 1) NOT NULL,
+    CONSTRAINT [PK_TrendyolOrders] PRIMARY KEY CLUSTERED ([Id] ASC),
+    CONSTRAINT [FK_TrendyolOrders_ToInvoiceAddresses] FOREIGN KEY ([InvoiceAddressId]) REFERENCES [dbo].[TrendyolOrders_InvoiceAddresses] ([id]),
+    CONSTRAINT [FK_TrendyolOrders_ToShipmentAddresses] FOREIGN KEY ([ShipmentAddressId]) REFERENCES [dbo].[TrendyolOrders_ShipmentAddresses] ([Id])
+);
+
