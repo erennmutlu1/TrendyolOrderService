@@ -23,7 +23,6 @@ namespace TrendyolOrderService.Models
         public double discount { get; set; }
         public double lineItemPrice { get; set; }
         public double lineItemDiscount { get; set; }
-
         public string currencyCode { get; set; }
         public string productColor { get; set; }
         public string sku { get; set; }
@@ -32,8 +31,6 @@ namespace TrendyolOrderService.Models
         public string orderLineItemStatusName { get; set; }
         public double price { get; set; }
         public string orderNumber { get; set; }
-
-
 
     }
 
