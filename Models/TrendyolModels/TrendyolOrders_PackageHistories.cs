@@ -15,9 +15,6 @@ namespace TrendyolOrderService.Models
         public string status { get; set; }
         public string orderNumber { get; set; }
         public int id { get; set; }
-
-
-
     }
 
 
