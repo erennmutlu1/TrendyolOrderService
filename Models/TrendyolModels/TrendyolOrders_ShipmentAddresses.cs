@@ -16,26 +16,16 @@ namespace TrendyolOrderService.Models
         public string LastName { get; set; }
         public string Address1 { get; set; }
         public string Address2 { get; set; }
-
         public string City { get; set; }
-
         public Int64 CityCode { get; set; }
-
         public string District { get; set; }
-
         public Int64 DistrictId { get; set; }
-
         public string PostalCode { get; set; }
-
         public string CountryCode { get; set; }
         public Int64 NeighborhoodId { get; set; }
-
         public string Neighborhood { get; set; }
-
         public string FullAddress { get; set; }
-
         public string FullName { get; set; }
-
     }
 
     
