@@ -13,7 +13,6 @@ namespace TrendyolOrderService.Models
     {
         [Key]
         public int Id { get; set; }
-
         public string OrderNumber { get; set; }
         public double GrossAmount { get; set; }
         public double TotalDiscount { get; set; }
@@ -37,10 +36,6 @@ namespace TrendyolOrderService.Models
         public long estimatedDeliveryStartDate { get; set; }
         public long estimatedDeliveryEndDate { get; set; }
         public double totalPrice { get; set; }
-
-
-
-
 
     }
 
