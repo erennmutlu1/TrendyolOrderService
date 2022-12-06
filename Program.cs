@@ -9,11 +9,8 @@ namespace TrendyolOrderService
     {
         public static void Main(string[] args)
         {
-
-           
-
            // Log.Logger = new LoggerConfiguration() 
-            //.WriteTo.File("Sipariþ\\log.txt")
+            //.WriteTo.File("Sipariï¿½\\log.txt")
             //    .CreateLogger();
 
             CreateHostBuilder(args).Build().Run();
