@@ -10,8 +10,5 @@ namespace TrendyolOrderService.Models.TrendyolModels
     {
         public long shipm { get; set; }
 
-
-
-
     }
 }
