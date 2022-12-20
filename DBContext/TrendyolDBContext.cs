@@ -12,6 +12,7 @@ namespace TrendyolOrderService.DBContext
     {
        
         public DbSet<TrendyolOrders_ShipmentAddresses> TrendyolOrders_ShipmentAddresses { get; set; }
+        
         public DbSet<TrendyolOrders_InvoiceAddresses> TrendyolOrders_InvoiceAddresses { get; set; }
 
         public DbSet<TrendyolOrders_PackageHistories> TrendyolOrders_PackageHistories { get; set; }
