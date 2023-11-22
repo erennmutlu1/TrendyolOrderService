@@ -14,5 +14,4 @@ namespace TrendyolOrderService.Models
         public double lineItemPrice { get; set; }
         public double lineItemDiscount { get; set; }
     }
-
 }

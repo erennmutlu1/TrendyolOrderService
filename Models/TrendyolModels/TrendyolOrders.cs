@@ -38,31 +38,4 @@ namespace TrendyolOrderService.Models
         public double totalPrice { get; set; }
 
     }
-
-
-
-   
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 }

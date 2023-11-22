@@ -16,27 +16,4 @@ namespace TrendyolOrderService.Models
         public string orderNumber { get; set; }
         public int id { get; set; }
     }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 }

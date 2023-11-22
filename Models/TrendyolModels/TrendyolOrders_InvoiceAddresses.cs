@@ -28,27 +28,4 @@ namespace TrendyolOrderService.Models
         public string fullAddress { get; set; }
         public string fullName { get; set; }
     }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 }

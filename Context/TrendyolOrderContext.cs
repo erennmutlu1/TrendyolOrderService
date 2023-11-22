@@ -9,11 +9,6 @@ namespace TrendyolOrderService.Context
 {
     public class TrendyolOrderContext 
     {
-
-     
-
-
-
         public class TrendyolRest
         {
             public int page { get; set; }
@@ -21,14 +16,7 @@ namespace TrendyolOrderService.Context
             public int totalPages { get; set; }
             public int totalElements { get; set; }
             public IList<Content> content { get; set; }
-       
-        
         }
-
-       
-
-
-
 
         public class ShipmentAddress
         {
@@ -101,7 +89,6 @@ namespace TrendyolOrderService.Context
 
         public class PackageHistories
         {
-
             public Int64 id1 { get; set; }
             public Int64 createdDate { get; set; }
             public string status { get; set; }
@@ -109,7 +96,6 @@ namespace TrendyolOrderService.Context
 
         public class Content
         {
-
             public ShipmentAddress shipmentAddress { get; set; }
             public string orderNumber { get; set; }
             public double grossAmount { get; set; }
@@ -132,15 +118,11 @@ namespace TrendyolOrderService.Context
             public List<PackageHistories> packageHistories { get; set; }
             public string shipmentPackageStatus { get; set; }
             public string deliveryType { get; set; }
-
             public long timeSlotId { get; set; }
-
             public string scheduledDeliveryStoreId { get; set; }
-
             public long estimatedDeliveryStartDate { get; set; }
             public long estimatedDeliveryEndDate { get; set; }
             public double totalPrice { get; set; }
-
         }
 
         public class TrendYolOrders

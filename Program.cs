@@ -12,7 +12,6 @@ namespace TrendyolOrderService
            // Log.Logger = new LoggerConfiguration() 
             //.WriteTo.File("Sipari�\\log.txt")
             //    .CreateLogger();
-
             CreateHostBuilder(args).Build().Run();
         }
 
@@ -24,9 +23,9 @@ namespace TrendyolOrderService
                 logging.AddSerilog();
             })
 
-                .ConfigureServices((hostContext, services) =>
-                {
-                    services.AddHostedService<Worker>();
-                });
+            .ConfigureServices((hostContext, services) =>
+            {
+                services.AddHostedService<Worker>();
+            });
     }
 }

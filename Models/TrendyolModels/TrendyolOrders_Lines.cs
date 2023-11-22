@@ -33,27 +33,4 @@ namespace TrendyolOrderService.Models
         public string orderNumber { get; set; }
 
     }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 }
