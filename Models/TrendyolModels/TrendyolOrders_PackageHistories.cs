@@ -14,6 +14,7 @@ namespace TrendyolOrderService.Models
         public long createdDate { get; set; } 
         public string status { get; set; }
         public string orderNumber { get; set; }
+        [Key]
         public int id { get; set; }
     }
 }

@@ -18,7 +18,10 @@ namespace TrendyolOrderService.DBContext
         public DbSet<TrendyolOrders> TrendyolOrders { get; set;}
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            _ = optionsBuilder.UseSqlServer(@"Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=TrendyolOrderDatabase;Integrated Security=True");
+            if (!optionsBuilder.IsConfigured)
+            {
+                optionsBuilder.UseSqlServer(@"Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=TrendyolOrderDatabase;Integrated Security=True");
+            }
         }    
     }
 }

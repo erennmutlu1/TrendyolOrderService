@@ -10,6 +10,7 @@ namespace TrendyolOrderService.Models
 {
     public class TrendyolOrders_DiscountDetail
     {
+        [Key]
         public int Id { get; set; }
         public double lineItemPrice { get; set; }
         public double lineItemDiscount { get; set; }
